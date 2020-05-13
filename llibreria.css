@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:100,300,700');
 
-/* *{
-  margin: 10px;
-} */
 
 /*header*/
 
@@ -79,36 +76,6 @@ body {
   background-color: rgb(255, 248, 238)
 }
 
-/* 
-
-.row1{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 70px;
-}
-
-.row2{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 90px;
-}
-
-
-.book{
-  border: 2px solid;
-  padding: 5px;
-  background-color: white;
-  height: 365px;
-  width: 360;
-  
-  
-}
-
-.bookdata{
-  height: 365px;
-  width: 360;
-
-}
 
 /*footer*/
 
@@ -117,16 +84,17 @@ footer{
 /*   display: flex;
   justify-content: space-around; */
   background-color:rgb(245, 193, 121);
-
+  
 }
 
 li{
   list-style:none
-} */
+} 
 /* social networks */
 li:hover{
   text-decoration: underline; 
 }
+
 
 .fa {
   padding: 15px;
