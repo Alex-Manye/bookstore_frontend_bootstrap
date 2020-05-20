@@ -44,11 +44,6 @@ header{
   display: flex;*/
 }
 
-/*It doesn't work*/
-#navbar-toggler-icon {
-  background-color:rgb(119, 40, 210); 
-}
-
 a {
   font-weight: bold;
 }
@@ -75,6 +70,15 @@ body {
   size: 10px;
   background-color: rgb(255, 248, 238)
 }
+
+/*FORM*/
+.col-center{
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+
 
 
 /*footer*/
