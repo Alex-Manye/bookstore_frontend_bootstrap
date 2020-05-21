@@ -21,9 +21,9 @@ function registerValidate() {
 	
 	form.classList.remove('is-invalid');
 	
-	var inputEmail = document.forms["myForm"]["inputEmail"];
+	//var inputEmail = document.forms["myForm"]["inputEmail"];
 
-	//var inputEmail = document.getElementById('inputEmail');
+	var inputEmail = document.getElementById('inputEmail');
 
     //will get the value of the "inputPassword" element within the "myForm" <form>
     var inputPassword = document.forms["myForm"]["inputPassword"];
@@ -31,6 +31,7 @@ function registerValidate() {
 	var inputProvince = document.forms["myForm"]["inputProvince"];
     var gridCheck = document.forms["myForm"]["gridCheck"];
     
+
     console.log(inputEmail)
     console.log(inputPassword)
     console.log(inputConfirmPassword)
@@ -83,7 +84,6 @@ function registerValidate() {
     }
     console.log(acumErrores)
 }
-
 
 
 
