@@ -23,8 +23,8 @@
             <div class="col-sm-12 col-md-4 ">
                 <img class="img-fluid ml-3"  src="../images/LogoBooks4You.png" alt="logo">
             </div>
-            <div class="col-sm-12 col-md-8 justify-content-sm-center justify-content-lg-end">
-                <div class="d-flex justify-content-center">
+            <div class="col-sm-12 col-md-8">
+                <div class="d-flex justify-content-center justify-content-md-end">
                 <a class="btn btn-warning btn-login" href="login.html" role="button">Log in</a>
                 <a class="btn btn-warning btn-signin" href="signup.html" role="button">Sign up</a>
             </div>
@@ -57,17 +57,22 @@
             </div>
     </nav>
 
-    <div class="container">
-        <form class="col-center p-5">
+    <div class="container col-center p-5">
+
+            <form method="POST" action="registrado.html" id="myFormId" onsubmit="return registerValidate()" name="myForm"></form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
+                <label for="inputEmail">Email address</label>
+                <input type="text" name="inputEmail" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <div class="invalid-feedback" id="errorEmail"></div>
+              </div>
+      
+      
+      
+              <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" name="inputPassword" class="form-control" id="inputPassword" placeholder="Password">
+                <div class="invalid-feedback" id="errorPassword"></div>
+              </div>
             <button type="submit" class="btn btn-primary">Log In</button>
         </form>
     </div>
