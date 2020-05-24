@@ -31,52 +31,58 @@
             </div>
         </header>
     
-    <nav class="navbar navbar-expand-sm bg-warning navbar-light">
-        <a href="#" class="navbar-brand"><img src="" style="width:30px;"></a>
-        
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#uno"> 
-                <span class="navbar-toggler-icon"></span>
-            </button>  
+        <nav class="navbar navbar-expand-sm bg-warning navbar-light">
+            <a href="#" class="navbar-brand"></a>
+    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#uno"> 
+                    <span class="navbar-toggler-icon"></span>
+                </button>  
+    
+                <div class="collapse navbar-collapse" id="uno">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="navbar-nav"><a href="./index.html" class="nav-link text-dark">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle bg-warning text-dark" data-toggle="dropdown" id="navbardrop">Books</a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item bg-warning text-dark">Fiction</a>
+                                <a href="#" class="dropdown-item bg-warning text-dark">Non Fiction</a>
+                                <a href="#" class="dropdown-item bg-warning text-dark">Children</a>
+                            </div>
+                        </li>
+                        <li class="navbar-nav"><a href="#" class="nav-link text-dark">eBooks</a></li>
+                        <li class="navbar-nav"><a href="#" class="nav-link text-dark">Newsstand</a></li>
+                        <li class="navbar-nav"><a href="#" class="nav-link text-dark">Music</a></li>
+                        <li class="navbar-nav"><a href="#" class="nav-link text-dark">Movies & TV</a></li>
+                    </ul>
+    
+                    <form id="formRegister" class="form-inline my-2 my-lg-0" onsubmit="return searchValidate()">
+                        <input class="form-control mr-sm-2" type="search" id="inputSearch" placeholder="Search" aria-label="Search">
+                        <button class="btn btn btn-info my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+        </nav>
 
-            <div class="collapse navbar-collapse" id="uno">
-                <ul class="navbar-nav">
-                    <li class="navbar-nav"><a href="index.html" class="nav-link text-dark">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle bg-warning text-dark" data-toggle="dropdown" id="navbardrop">Books</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item bg-warning text-dark">Fiction</a>
-                            <a href="#" class="dropdown-item bg-warning text-dark">Non Fiction</a>
-                            <a href="#" class="dropdown-item bg-warning text-dark">Children</a>
-                        </div>
-                    </li>
-                    <li class="navbar-nav"><a href="#" class="nav-link text-dark">eBooks</a></li>
-                    <li class="navbar-nav"><a href="#" class="nav-link text-dark">Newsstand</a></li>
-                    <li class="navbar-nav"><a href="#" class="nav-link text-dark">Music</a></li>
-                    <li class="navbar-nav"><a href="#" class="nav-link text-dark">Movies & TV</a></li>
-                </ul>
-            </div>
-    </nav>
 
-    <div class="container col-center p-5">
 
-            <form method="POST" action="registrado.html" id="myFormId" onsubmit="return registerValidate()" name="myForm">
-            <div class="form-group">
-                <label for="inputEmail">Email address</label>
-                <input type="text" name="inputEmail" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                <div class="invalid-feedback" id="errorEmail"></div>
-              </div>
-      
-      
-      
-              <div class="form-group">
-                <label for="inputPassword">Password</label>
-                <input type="password" name="inputPassword" class="form-control" id="inputPassword" placeholder="Password">
-                <div class="invalid-feedback" id="errorPassword"></div>
-              </div>
+<div class="container col-center p-5">
+
+    <form method="POST" action="" id="formLogin" onsubmit="return loginValidate()" name="myForm">
+        <div class="form-group">
+          <label for="inputEmailLogin">Email address</label>
+          <input type="text" name="inputEmailLogin" class="form-control" id="inputEmailLogin" placeholder="Enter email">
+          <div class="invalid-feedback" id="errorEmailLogin"></div>
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+
+        <div class="form-group">
+          <label for="inputPasswordLogin">Password</label>
+          <input type="password" name="inputPasswordLogin" class="form-control" id="inputPasswordLogin" placeholder="Password">
+          <div class="invalid-feedback" id="errorPasswordLogin"></div>
+        </div>
+
             <button type="submit" class="btn btn-primary">Log In</button>
         </form>
-    </div>
-
+</div> 
     
 
     <footer class="container-fluid">

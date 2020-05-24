@@ -1,20 +1,9 @@
-'use strict';
+'use strict'; 
 
-/* L'objectiu d'aquest apartat serà validar els formularis de la teva web amb javascript. 
-- Validar el formulari de cerca:
-●	Condicions: La paraula introduïda haurà de ser obligatòria i contenir més de 3 caràcters.
+const form = document.getElementById('formRegister');
+const formLogin = document.getElementById('formLogin');
+const formSearch = document.getElementById('formSearch');
 
-- Validar el formulari de login (haurà de tenir un camp email i un altre de contrasenya):
-●	Condicions: Els camps email i contraseña hauran de ser obligatoris. El email haurà de seguir el format estàndard dels email (Hi ha molta documentació)
-
-- Validar el formulari de registre (com a mínim haurà de tenir un camp email, contrasenya, repetició de contrasenya i un desplegable de província). 
-●	Les condicions de validació les deixem a les vostres mans.
-
-Nota: els formularis no es validen amb ALERTS!! Pista: utiliza la clase “is-invalid”amb Bootstrap 4.
- */
-
-
-const form = document.getElementById('myFormId');
 
 function registerValidate() {
 	var acumErrores = 0;
@@ -32,18 +21,12 @@ function registerValidate() {
     var gridCheck = document.forms["myForm"]["gridCheck"];
     
 
-    console.log(inputEmail)
-    console.log(inputPassword)
-    console.log(inputConfirmPassword)
-    console.log(inputProvince)
-    console.log(gridCheck)
-
 //email validator    
 	if(inputEmail.value == "") {
 		inputEmail.classList.add("is-invalid");
 		document.getElementById("errorEmail").textContent = "Mandatory field";
         acumErrores ++;
-    }else if(!emailValidator(inputEmail.value)){
+    } else if(!emailValidator(inputEmail.value)){
 		inputEmail.classList.add("is-invalid");
 		document.getElementById("errorEmail").textContent = "Email format wrong";
 		acumErrores ++;
@@ -54,25 +37,76 @@ function registerValidate() {
         inputPassword.classList.add("is-invalid");
         document.getElementById("errorPassword").textContent = "Mandatory field";
         acumErrores ++;
+    }
 
     //password repeat validator
-    if(inputPassword.value !== InputConfirmPassword.value) {
+     if(inputPassword.value !== inputConfirmPassword.value) {
         inputConfirmPassword.classList.add("is-invalid");
-        document.getElementById("errorConfirmPassword").textContent = "Mandatory field";
+        document.getElementById("errorConfirmPassword").textContent = "Password must be the same";
         acumErrores ++;
-    }
+    } 
 
     //Region/Province validator
 
-    if(inputProvince.value == "") {
+    if(inputProvince.value == "Choose...") {
         inputProvince.classList.add("is-invalid");
         document.getElementById("errorProvince").textContent = "Mandatory field";
         acumErrores ++;
     }
 
+    //Check validator
     if(!gridCheck.checked) {
         gridCheck.classList.add("is-invalid");
-        document.getElementById("errorCheck").textContent = "I accept";
+        document.getElementById("errorCheck").textContent = "Please, accept it";
+        acumErrores ++;
+    }
+    if (acumErrores > 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function loginValidate() {
+
+	var acumErrores = 0;
+	
+    formLogin.classList.remove('is-invalid');
+    
+	var inputEmailLogin = document.getElementById('inputEmailLogin');
+    var inputPasswordLogin = document.forms["myForm"]["inputPasswordLogin"];
+
+
+    //email validator    
+	if(inputEmailLogin.value == "") {
+		inputEmailLogin.classList.add("is-invalid");
+		document.getElementById("errorEmailLogin").textContent = "Mandatory field";
+        acumErrores ++;
+    } else if(!emailValidator(inputEmailLogin.value)){
+		inputEmailLogin.classList.add("is-invalid");
+		document.getElementById("errorEmailLogin").textContent = "Email format wrong";
+		acumErrores ++;
+	}
+
+    //password validator
+    if(inputPasswordLogin.value == "") {
+        inputPasswordLogin.classList.add("is-invalid");
+        document.getElementById("errorPasswordLogin").textContent = "Mandatory field";
+        acumErrores ++;
+    }
+    if (acumErrores > 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function searchValidate() {
+    var acumErrores = 0;
+
+    if ((inputSearch.value =="")||(inputSearch.value.length<3) ){
+        inputSearch.classList.add("is-invalid");
+        alert("Enter a word longer than 3 characters");
         acumErrores ++;
     }
 
@@ -81,16 +115,13 @@ function registerValidate() {
     }else{
         return true;
     }
-    }
-    console.log(acumErrores)
 }
 
-
-form.addEventListener('blur', (event) => {
-	console.log(event);
+form.addEventListener("blur", (event) => {
 	if(event.target.value!='') event.target.classList.remove('is-invalid');
-    //registerValidate();
-}, true);
+}, true); 
+
+
 
 function emailValidator(email) {
 	var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
